@@ -1,9 +1,11 @@
+-- Author: Matthias Larisch
+-- reimplemented freely after various kme200 php scripts found on the net
+-- Use this piece of code however you want, just dont sue me for anything :-)
 local http = require('socket.http')
-local ltn12 = require("ltn12")
+local ltn12 = require('ltn12')
 local inspect = require('inspect')
 local json = require('json')
-local padding = require('padding')
-local openssl = require'openssl'
+local openssl = require('openssl')
 require('base64')
 require('config')
 
