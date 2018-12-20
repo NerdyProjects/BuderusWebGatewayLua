@@ -1,0 +1,22 @@
+function string.fromhex(str)
+    return (str:gsub('..', function (cc)
+        return string.char(tonumber(cc, 16))
+    end))
+end
+
+urls = {
+  "/gateway/DateTime",
+  "/system/sensors/temperatures/supply_t1",
+  "/system/sensors/temperatures/return",
+  "/dhwCircuits/dhw1/actualTemp",
+  "/heatingCircuits/hc1/supplyTemperatureSetpoint",
+  "/system/appliance/numberOfStarts",
+  "/system/heatSources/hs1/actualModulation",
+  "/system/heatSources/hs1/actualPower"
+}
+-- decryption key can be retrieved from https://ssl-account.com/km200.andreashahn.info/
+-- enter the device password from the label
+-- and the password set with the android app
+-- you don't need to register the device online.
+key = string.fromhex('hex-encoded-decryption-key')
+host = 'http://192.168.0.40'
